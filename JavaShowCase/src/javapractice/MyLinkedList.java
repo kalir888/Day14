@@ -67,4 +67,15 @@ public class MyLinkedList {
         tempNode = tempNode.getNext();
         return tempNode;
     }
+
+    public <K>INode search(K myKey) {
+        INode tempNode = head;
+        int nodeCount = 1;
+        while(!tempNode.getKey().equals(myKey)) {
+            tempNode = tempNode.getNext();
+            nodeCount++;
+        }
+        System.out.println("the key value " + myKey + " is in node" + nodeCount);
+        return tempNode;
+    }
 }

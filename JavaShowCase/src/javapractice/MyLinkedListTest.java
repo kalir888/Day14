@@ -12,7 +12,7 @@ public class MyLinkedListTest {
         myLinkedList.add(myFirstNode);
         myLinkedList.add(mySecondNode);
         myLinkedList.add(myThirdNode);
-        myLinkedList.popLast();
+        myLinkedList.search(30);
         myLinkedList.printMyNodes();
     }
 }
