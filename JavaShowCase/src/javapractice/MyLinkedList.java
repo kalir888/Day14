@@ -78,4 +78,15 @@ public class MyLinkedList {
         System.out.println("the key value " + myKey + " is in node" + nodeCount);
         return tempNode;
     }
+
+    public <K> void insertWithKey(K mykey, INode newNode) {
+        INode temp1Node = head;
+        INode temp2Node;
+        while(!temp1Node.getKey().equals(mykey)) {
+            temp1Node = temp1Node.getNext();
+        }
+        temp2Node = temp1Node.getNext();
+        temp1Node.setNext(newNode);
+        newNode.setNext(temp2Node);
+    }
 }
