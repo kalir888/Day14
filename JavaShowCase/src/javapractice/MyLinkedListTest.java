@@ -15,6 +15,8 @@ public class MyLinkedListTest {
         myLinkedList.add(mySecondNode);
         myLinkedList.add(myThirdNode);
         myLinkedList.insertWithKey(30,myFourthNode);
+        myLinkedList.removeWithKey(40);
+        System.out.println(myLinkedList.size());
         myLinkedList.printMyNodes();
     }
 }

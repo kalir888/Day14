@@ -89,4 +89,23 @@ public class MyLinkedList {
         temp1Node.setNext(newNode);
         newNode.setNext(temp2Node);
     }
+
+    public <K> void removeWithKey(K myKey) {
+        INode tempNode = head;
+        while(!tempNode.getNext().getKey().equals(myKey)) {
+            tempNode = tempNode.getNext();
+        }
+        tempNode.setNext(tempNode.getNext().getNext());
+        tempNode.getNext().setNext(null);
+    }
+
+    public int size() {
+        INode tempNode = head;
+        int size = 1;
+        while(!tempNode.equals(tail)) {
+            tempNode = tempNode.getNext();
+            size++;
+        }
+        return size;
+    }
 }
