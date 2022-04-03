@@ -11,10 +11,10 @@ public class MyLinkedListTest {
         MyNode<Integer> myFourthNode = new MyNode<>(40);
 
         MyLinkedList myLinkedList = new MyLinkedList();
-        myLinkedList.sortIntAdd(myFirstNode);
-        myLinkedList.sortIntAdd(mySecondNode);
-        myLinkedList.sortIntAdd(myThirdNode);
-        myLinkedList.sortIntAdd(myFourthNode);
+        myLinkedList.sortAdd(myFirstNode);
+        myLinkedList.sortAdd(mySecondNode);
+        myLinkedList.sortAdd(myThirdNode);
+        myLinkedList.sortAdd(myFourthNode);
         System.out.println(myLinkedList.size());
         myLinkedList.printMyNodes();
     }

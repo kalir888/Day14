@@ -109,14 +109,14 @@ public class MyLinkedList {
         return size;
     }
 
-    public <K> void sortIntAdd(INode newNode) {
+    public <T extends Comparable> void sortAdd(INode newNode) {
         add(newNode);
         if(head.getNext() != null) {
             INode tempNode = head;
             while (tempNode.getNext() != null) {
-                int temp1 = (int) tempNode.getKey();
-                int temp2 = (int) tempNode.getNext().getKey();
-                if (temp1 > temp2) {
+                T temp1 = (T) tempNode.getKey();
+                T temp2 = (T) tempNode.getNext().getKey();
+                if (temp1.compareTo(temp2) > 0) {
                     tempNode.setKey(temp2);
                     tempNode.getNext().setKey(temp1);
                 }
