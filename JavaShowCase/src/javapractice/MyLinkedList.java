@@ -3,6 +3,7 @@ package javapractice;
 public class MyLinkedList {
     public INode head;
     public INode tail;
+    public int size;
 
     public MyLinkedList() {
         this.head = null;
@@ -19,6 +20,7 @@ public class MyLinkedList {
             this.head = newNode;
             this.head.setNext(tempNode);
         }
+        size++;
     }
 
     public void printMyNodes() {
@@ -43,17 +45,20 @@ public class MyLinkedList {
             this.tail.setNext(newNode);
             this.tail = newNode;
         }
+        size++;
     }
 
     public void insert(INode myNode, INode newNode) {
         INode tempNode = myNode.getNext();
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
+        size++;
     }
 
     public INode pop() {
         INode tempNode = this.head;
         this.head = this.head.getNext();
+        size--;
         return tempNode;
     }
 
@@ -65,6 +70,7 @@ public class MyLinkedList {
         this.tail = tempNode;
         tail.setNext(null);
         tempNode = tempNode.getNext();
+        size--;
         return tempNode;
     }
 
@@ -88,6 +94,7 @@ public class MyLinkedList {
         temp2Node = temp1Node.getNext();
         temp1Node.setNext(newNode);
         newNode.setNext(temp2Node);
+        size++;
     }
 
     public <K> void removeWithKey(K myKey) {
@@ -97,15 +104,10 @@ public class MyLinkedList {
         }
         tempNode.setNext(tempNode.getNext().getNext());
         tempNode.getNext().setNext(null);
+        size--;
     }
 
     public int size() {
-        INode tempNode = head;
-        int size = 1;
-        while(!tempNode.equals(tail)) {
-            tempNode = tempNode.getNext();
-            size++;
-        }
         return size;
     }
 

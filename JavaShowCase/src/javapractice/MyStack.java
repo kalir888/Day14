@@ -19,4 +19,21 @@ public class MyStack {
     public INode peak() {
         return myLinkedList.head;
     }
+
+    public int size() {
+        return myLinkedList.size();
+    }
+
+    public INode pop() {
+        INode tempNode = myLinkedList.pop();
+        return tempNode;
+    }
+
+    public boolean isEmpty() {
+        if (size() == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
