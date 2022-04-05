@@ -85,10 +85,10 @@ public class MyLinkedList {
         return tempNode;
     }
 
-    public <K> void insertWithKey(K mykey, INode newNode) {
+    public <K> void insertWithKey(K myKey, INode newNode) {
         INode temp1Node = head;
         INode temp2Node;
-        while(!temp1Node.getKey().equals(mykey)) {
+        while(!temp1Node.getKey().equals(myKey)) {
             temp1Node = temp1Node.getNext();
         }
         temp2Node = temp1Node.getNext();
